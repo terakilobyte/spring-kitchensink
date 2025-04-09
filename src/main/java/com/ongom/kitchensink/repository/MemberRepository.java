@@ -17,7 +17,7 @@ import java.util.Optional;
  *
  * Assumes the existence of a com.ongom.kitchensink.model.Member class annotated with
  * @org.springframework.data.mongodb.core.mapping.Document and containing an
- * @org.springframework.data.annotation.Id field of type Long. Note that using String
+ * @org.springframework.data.annotation.Id field of type String. Note that using String
  * as the ID type is more common with MongoDB. Adjust the ID type parameter
  * <Member, Long> if the Member document uses a different ID type.
  */
@@ -44,7 +44,7 @@ public interface MemberRepository extends MongoRepository<Member, String> {
     List<Member> findAllByOrderByNameAsc();
 
     // Standard CRUD methods like findById, save, deleteById etc. are inherited
-    // from MongoRepository<Member, Long> and don't need to be explicitly declared.
-    // The original findById(Long id) is covered by the inherited findById(Long id)
+    // from MongoRepository<Member, String> and don't need to be explicitly declared.
+    // The original findById(Long id) is covered by the inherited findById(String id)
     // which returns Optional<Member>.
 }
