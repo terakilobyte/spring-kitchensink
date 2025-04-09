@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Kitchensink</title>
+    <link href="css/screen.css" rel="stylesheet"/>
+</head>
+
+<body>
+<div id="container">
+    <div class="dualbrand">
+        <img src="https://storage-us-gcs.bfldr.com/6x3q9bsq4nj777n8sbbnp6/v/1069931050/original/MongoDB_Logomark_ForestGreen.png?Expires=1744261034&KeyName=gcs-bfldr-prod&Signature=FyBPPZfHDLIiaAQiCkjAT1Ko3k0=" height="50" alt="MongoDB Logo"/>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Spring_Boot.svg" height="50" alt="Spring Boot Logo"/>
+    </div>
+
+    <h1>Welcome to Spring Boot Kitchensink!</h1>
+
+    <div>
+        <h2>Register a Member</h2>
+        <div id="form-errors" class="errors" style="display:none;"></div>
+        <form id="regForm">
+            <table class="simpletablestyle">
+                <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Enter your details</th>
+                    <th scope="col">Validation</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><label for="name">Name:</label></td>
+                    <td><input type="text" id="name" name="name" required/></td>
+                    <td><span id="name-error" class="invalid"></span></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="email" id="email" name="email" required/></td>
+                    <td><span id="email-error" class="invalid"></span></td>
+                </tr>
+                <tr>
+                    <td><label for="phoneNumber">Phone #:</label></td>
+                    <td><input type="tel" id="phoneNumber" name="phoneNumber" required pattern="[0-9]{10,12}"/></td>
+                    <td><span id="phone-error" class="invalid"></span></td>
+                </tr>
+                </tbody>
+            </table>
+            <p>
+                <button type="submit" id="register">Register</button>
+                <button type="reset" id="cancel">Cancel</button>
+            </p>
+        </form>
+    </div>
+
+    <h2>Members</h2>
+    <div id="member-list-error" class="errors" style="display:none;"></div>
+    <table id="memberTable" class="simpletablestyle">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone #</th>
+            <th>REST URL</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr id="no-members-row" style="display:none;">
+            <td colspan="5">No members registered yet.</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <script src="js/app.js"></script>
+</div>
+</body>
+</html>
